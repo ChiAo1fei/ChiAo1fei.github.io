@@ -301,21 +301,17 @@
       
         
           
-            <h2 id="1-增-添加列表元素"><a href="#1-增-添加列表元素" class="headerlink" title="1. 增(添加列表元素)"></a>1. 增(添加列表元素)</h2><ul>
-<li>append()<br>  列表.append(元素) - 在指定的列表的末尾添加一个指定元素</li>
-<li>insert()<br>  列表.insert(下标,元素) - 在指定的下标前插入一个指定的元素<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">animes = [<span class="string">'海贼王'</span>, <span class="string">'火影忍者'</span>, <span class="string">'秦时明月'</span>, <span class="string">'画江湖'</span>]</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(animes)</span></span></span><br><span class="line">animes.append(<span class="string">'郭锐冒险记'</span>)</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(animes)</span></span></span><br><span class="line">animes.insert(<span class="number">2</span>,<span class="string">'郭锐吃屎记'</span>)</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(animes)</span></span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="2-删-删除元素"><a href="#2-删-删除元素" class="headerlink" title="2. 删(删除元素)"></a>2. 删(删除元素)</h2><ul>
-<li>del<br>  del 列表[下标] - 删除指定列表下标对应元素<br>  注意：del 是python中的关键字，可以删除任何东西<br>  下标越界(IndexError)</li>
-<li>remove()<br>  列表.remove(元素) - 删除列表中第一个指定元素<br>  注意：被删除的元素在列表中的元素必须是存在的<br>  ValueError</li>
-<li>pop()<br>  列表.pop()<br>  列表.pop(下标)<br>  变量名 = 列表.pop()  - 将列表末尾元素弹出，并将弹出的值赋给定义的变量<br>  变量名 = 列表.pop(下标) - 将指定列表下标位置的元素弹出，并且赋给定义的变量<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">del</span> animes[-<span class="number">2</span>]</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(animes)</span></span></span><br><span class="line">animes.remove(<span class="string">'海贼王'</span>)</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(animes)</span></span>   </span><br><span class="line">pop_animes = animes.pop(<span class="number">0</span>)</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(animes)</span></span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(pop_animes)</span></span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="3-修改元素的值"><a href="#3-修改元素的值" class="headerlink" title="3. 修改元素的值"></a>3. 修改元素的值</h2><p>列表[下标] = 修改后的值   — 修改列表中指定下标对应的值<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">grade = [<span class="number">90</span>, <span class="number">78</span>, <span class="number">50</span>, <span class="number">77</span>, <span class="number">23</span>, <span class="number">82</span>, <span class="number">45</span>]</span><br><span class="line"><span class="built_in">count</span> = <span class="number">0</span><span class="keyword">for</span> <span class="built_in">index</span>  in <span class="built_in">range</span>(<span class="built_in">len</span>(grade)):</span><br><span class="line">    <span class="keyword">if</span> grade[<span class="built_in">index</span>] &lt; <span class="number">60</span>:</span><br><span class="line">        grade[<span class="built_in">index</span>] = <span class="string">'下一个班见'</span></span><br><span class="line">        <span class="built_in">count</span> += <span class="number">1</span></span><br><span class="line"><span class="keyword">print</span>(grade)</span><br><span class="line"><span class="keyword">print</span>(<span class="string">'下一个班见的学生有%d个'</span> % <span class="built_in">count</span>)</span><br></pre></td></tr></table></figure></p>
-<h2 id="4-常见的坑"><a href="#4-常见的坑" class="headerlink" title="4. 常见的坑~~~~~"></a>4. 常见的坑<del>~</del><del>~</del><del>~</del>~~</h2><p>坑一：遍历列表删除部分元素，删除不全！  —– 遍历的时候对原列表切片<br>坑二：通过下标去遍历列表元素的时候，删除元素的时候，下标越界和元素获取不全，解决办法用while循环</p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">ages = []</span><br><span class="line">i = <span class="number">0</span></span><br><span class="line">    ages.<span class="keyword">append</span>(<span class="keyword">int</span>(age))</span><br><span class="line">    i += <span class="number">1</span></span><br><span class="line"><span class="keyword">print</span>(ages)</span><br><span class="line">将小于<span class="number">18</span>的提出来，并存到新的列表中</span><br><span class="line"><span class="built_in">index</span> = <span class="number">0</span></span><br><span class="line">liitle = []</span><br><span class="line"><span class="keyword">while</span> <span class="built_in">index</span> &lt; <span class="built_in">len</span>(ages):</span><br><span class="line">    <span class="keyword">if</span> ages[<span class="built_in">index</span>] &lt; <span class="number">18</span>:</span><br><span class="line">        liitle.<span class="keyword">append</span>(ages.<span class="keyword">pop</span>(<span class="built_in">index</span>))</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">index</span> += <span class="number">1</span></span><br><span class="line"><span class="keyword">print</span>(ages)</span><br><span class="line"><span class="keyword">print</span>(liitle)通过遍历元素删除，要删除的元素在一起要切片，</span><br><span class="line"><span class="keyword">for</span> age in ages[:]:</span><br><span class="line">    <span class="keyword">if</span> age &lt; <span class="number">18</span>:</span><br><span class="line">        ages.<span class="built_in">remove</span>(age)</span><br><span class="line"><span class="keyword">print</span>(ages)</span><br><span class="line"><span class="keyword">while</span> True:</span><br><span class="line">    age = <span class="built_in">input</span>(<span class="string">'请输入年龄:'</span>)</span><br><span class="line">    <span class="keyword">if</span> age == <span class="string">'end'</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
-          
+          1. 增(添加列表元素)
+append()  列表.append(元素) - 在指定的列表的末尾添加一个指定元素
+insert()  列表.insert(下标,元素) - 在指定的下标前插入一个指定的元素123456animes = ['海贼王', '火影忍者', '秦时明月', '画江湖']pri
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/02/20/day06_02增删改查/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -437,17 +433,15 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/02/20/hello-world/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
