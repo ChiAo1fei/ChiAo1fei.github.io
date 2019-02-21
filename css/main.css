@@ -1832,7 +1832,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffff6a;
+  background: #59d02d;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2967,12 +2967,13 @@ hr {
 }
 .site-author-name {
   margin: 48px 0 0;
-  color: #090909;
+  color: #fff;
   font-family: 'Comic Sans MS', sans-serif;
 }
 .links-of-blogroll {
   font-size: 14px;
   margin-bottom: 42px;
+  color: #fff;
 }
 .links-of-author {
   margin-top: 30px;
@@ -3003,6 +3004,12 @@ hr {
 }
 .sidebar-nav li:hover {
   color: #0c0b0b;
+}
+.site-state-item-count {
+  color: #fff;
+}
+.site-state-item-name {
+  color: #fff;
 }
 .sidebar-toggle {
   background: #000;
