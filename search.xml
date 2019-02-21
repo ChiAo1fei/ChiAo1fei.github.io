@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[列表的增删改查]]></title>
+    <url>%2F2019%2F02%2F20%2Fday06_02%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5%2F</url>
+    <content type="text"><![CDATA[1. 增(添加列表元素) append() 列表.append(元素) - 在指定的列表的末尾添加一个指定元素 insert() 列表.insert(下标,元素) - 在指定的下标前插入一个指定的元素123456animes = ['海贼王', '火影忍者', '秦时明月', '画江湖']print(animes)animes.append('郭锐冒险记')print(animes)animes.insert(2,'郭锐吃屎记')print(animes) 2. 删(删除元素) del del 列表[下标] - 删除指定列表下标对应元素 注意：del 是python中的关键字，可以删除任何东西 下标越界(IndexError) remove() 列表.remove(元素) - 删除列表中第一个指定元素 注意：被删除的元素在列表中的元素必须是存在的 ValueError pop() 列表.pop() 列表.pop(下标) 变量名 = 列表.pop() - 将列表末尾元素弹出，并将弹出的值赋给定义的变量 变量名 = 列表.pop(下标) - 将指定列表下标位置的元素弹出，并且赋给定义的变量1234567del animes[-2]print(animes)animes.remove('海贼王')print(animes) pop_animes = animes.pop(0)print(animes)print(pop_animes) 3. 修改元素的值列表[下标] = 修改后的值 — 修改列表中指定下标对应的值1234567grade = [90, 78, 50, 77, 23, 82, 45]count = 0for index in range(len(grade)): if grade[index] &lt; 60: grade[index] = '下一个班见' count += 1print(grade)print('下一个班见的学生有%d个' % count) 4. 常见的坑~~~~~坑一：遍历列表删除部分元素，删除不全！ —– 遍历的时候对原列表切片坑二：通过下标去遍历列表元素的时候，删除元素的时候，下标越界和元素获取不全，解决办法用while循环 1234567891011121314151617181920212223ages = []i = 0 ages.append(int(age)) i += 1print(ages)将小于18的提出来，并存到新的列表中index = 0liitle = []while index &lt; len(ages): if ages[index] &lt; 18: liitle.append(ages.pop(index)) else: index += 1print(ages)print(liitle)通过遍历元素删除，要删除的元素在一起要切片，for age in ages[:]: if age &lt; 18: ages.remove(age)print(ages)while True: age = input('请输入年龄:') if age == 'end': break]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2019%2F02%2F20%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. &lt; !–more–&gt; Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+</search>
