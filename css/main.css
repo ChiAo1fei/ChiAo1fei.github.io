@@ -1822,7 +1822,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #21ffff;
+  background: #41ffa1;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2972,7 +2972,7 @@ hr {
   color: #649ab6;
 }
 .sidebar {
-  box-shadow: inset 2px 2px 40px #bdb2b2;
+  box-shadow: inset 2px 2px 40px #000;
 }
 .sidebar a {
   color: #649ab6;
@@ -2995,7 +2995,7 @@ hr {
   color: #0c0b0b;
 }
 .sidebar-toggle {
-  background: #649ab6;
+  background: #000;
 }
 .back-to-top {
   background: #649ab6;
