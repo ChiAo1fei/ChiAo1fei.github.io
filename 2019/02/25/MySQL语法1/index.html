@@ -111,7 +111,7 @@
 <meta property="og:site_name" content="ChiAo1fei">
 <meta property="og:description" content="DDL(数据定义语言) DML(数据操作语言) DCL(数据控制语言)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-25T11:20:23.234Z">
+<meta property="og:updated_time" content="2019-02-25T12:45:04.498Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL语法 1">
 <meta name="twitter:description" content="DDL(数据定义语言) DML(数据操作语言) DCL(数据控制语言)">
@@ -465,7 +465,7 @@
 <li><p>主键约束： 主键是这张表中能够标识唯一一条记录的字段(通过主键值能够找到表中唯一一条记录)</p>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE IF NOT EXISTS tb_student</span><br><span class="line">(stu_id INT NOT NULL auto_increment,		-- auto_increment 只针对主键有效，并且主键的类型是int</span><br><span class="line">	stu_name VARCHAR(20), </span><br><span class="line">	stu_sex bit DEFAULT 1, </span><br><span class="line">	stu_birth date,</span><br><span class="line">	PRIMARY KEY(stu_id)  -- 设置stu_id为当前表的主键，设置一个字段为主键，相当于间接的约束了这个字段的值是唯一的</span><br><span class="line">	);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE IF NOT EXISTS tb_student</span><br><span class="line">(stu_id INT NOT NULL auto_increment,		-- auto_increment 只针对主键有效，并且主键的类型是int</span><br><span class="line">	stu_name VARCHAR(20), </span><br><span class="line">	stu_sex bit DEFAULT 1, </span><br><span class="line">	stu_birth date,</span><br><span class="line">	PRIMARY KEY(stu_id)  -- 设置stu_id为当前表的主键，设置一个字段为主键，相当于间接的约束了这个字段的值是唯一的</span><br><span class="line">	);</span><br><span class="line">	</span><br><span class="line">-- 注意注意注意注意： 创建表的时候如果字段为中文 则不用加引号！！！！！！！！！！！！！！！！！！！！！！！</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>删除表</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">DROP table if EXISTS tb_student;</span><br><span class="line">TRUNCATE TABLE tb_student;</span><br><span class="line">-- 清空表中的记录：TRUNCATE table 表名  -  表还在，只是记录没有了</span><br></pre></td></tr></table></figure>
@@ -567,8 +567,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/23/MySQL配置/" rel="next" title="MySQL配置">
-                <i class="fa fa-chevron-left"></i> MySQL配置
+              <a href="/2019/02/23/Linux指令/" rel="next" title="Linux指令">
+                <i class="fa fa-chevron-left"></i> Linux指令
               </a>
             
           </div>
