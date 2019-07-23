@@ -92,7 +92,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="MySQL,">
 
 
 
@@ -103,16 +103,18 @@
 
 
 
-<meta name="description" content="小白求学习">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ChiAo1fei">
-<meta property="og:url" content="http://yoursite.com/tags/Linux/index.html">
+<meta name="description" content="在MySQL数据库中，支持单项、异步复制。在这个过程中，其中一个充当主服务器(master),另外一个便充当从服务器(slave)，在进行好配置后，主服务器会将更新信息写入到一个特定的二进制文件。并且会维护文件的一个索引来更总日志循环，这个日志的作用可以记录并且发送到从服务器中进行更新。 主从配置的优点：  实现服务器的负载均衡 通过复制来实现数据的异地备份 提高数据库系统的可用性">
+<meta name="keywords" content="MySQL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL主从配置">
+<meta property="og:url" content="http://yoursite.com/2018/07/13/数据库主从配置/index.html">
 <meta property="og:site_name" content="ChiAo1fei">
-<meta property="og:description" content="小白求学习">
+<meta property="og:description" content="在MySQL数据库中，支持单项、异步复制。在这个过程中，其中一个充当主服务器(master),另外一个便充当从服务器(slave)，在进行好配置后，主服务器会将更新信息写入到一个特定的二进制文件。并且会维护文件的一个索引来更总日志循环，这个日志的作用可以记录并且发送到从服务器中进行更新。 主从配置的优点：  实现服务器的负载均衡 通过复制来实现数据的异地备份 提高数据库系统的可用性">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-07-23T11:09:47.465Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ChiAo1fei">
-<meta name="twitter:description" content="小白求学习">
+<meta name="twitter:title" content="MySQL主从配置">
+<meta name="twitter:description" content="在MySQL数据库中，支持单项、异步复制。在这个过程中，其中一个充当主服务器(master),另外一个便充当从服务器(slave)，在进行好配置后，主服务器会将更新信息写入到一个特定的二进制文件。并且会维护文件的一个索引来更总日志循环，这个日志的作用可以记录并且发送到从服务器中进行更新。 主从配置的优点：  实现服务器的负载均衡 通过复制来实现数据的异地备份 提高数据库系统的可用性">
 
 
 
@@ -142,13 +144,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/Linux/">
+  <link rel="canonical" href="http://yoursite.com/2018/07/13/数据库主从配置/">
 
 
 
 
 
-  <title>标签: Linux | ChiAo1fei</title>
+  <title>MySQL主从配置 | ChiAo1fei</title>
   
 
 
@@ -172,7 +174,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     <a href="https://github.com/ChiAo1fei" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
 
@@ -309,130 +311,227 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block tag">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>Linux<small>标签</small>
-        </h1>
-      </div>
-
-      
-        
 
   <article class="post post-type-tags" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/13/数据库主从配置/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ChiAo1fei">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/photo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ChiAo1fei">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/02/23/Nginx服务器的搭建/" itemprop="url">
-              
-                <span itemprop="name">Nginx服务器的搭建</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">MySQL主从配置</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-02-23T00:00:00+08:00" content="2018-02-23">
-          02-23
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-13T00:00:00+08:00">
+                2018-07-13
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/07/13/数据库主从配置/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/07/13/数据库主从配置/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  774
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-tags" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/02/23/vim编辑器之神/" itemprop="url">
-              
-                <span itemprop="name">vim 编辑器之神</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-02-23T00:00:00+08:00" content="2018-02-23">
-          02-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-tags" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/06/23/Linux指令/" itemprop="url">
-              
-                <span itemprop="name">Linux指令</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-06-23T00:00:00+08:00" content="2017-06-23">
-          06-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-tags" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/23/MySQL配置/" itemprop="url">
-              
-                <span itemprop="name">MySQL配置</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-05-23T00:00:00+08:00" content="2017-05-23">
-          05-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <blockquote>
+<p>在MySQL数据库中，支持单项、异步复制。在这个过程中，其中一个充当主服务器(master),另外一个便充当从服务器(slave)，在进行好配置后，主服务器会将更新信息写入到一个特定的二进制文件。并且会维护文件的一个索引来更总日志循环，这个日志的作用可以记录并且发送到从服务器中进行更新。</p>
+<p>主从配置的优点：</p>
+<ol>
+<li>实现服务器的负载均衡</li>
+<li>通过复制来实现数据的异地备份</li>
+<li>提高数据库系统的可用性</li>
+</ol>
+</blockquote>
+<a id="more"></a>
+<h3 id="1-部署环境"><a href="#1-部署环境" class="headerlink" title="1 部署环境"></a>1 部署环境</h3><p>MySQL可以在windows、Linux、IOS系统上安装，推荐MySQL，一般的生产环境为Linux。</p>
+<p>在Linux下安装MySQL：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum <span class="keyword">install</span> mysql-<span class="keyword">server</span></span><br></pre></td></tr></table></figure>
+<p>在windows下可直接去官网下载。</p>
+<p>###2 配置</p>
+<p>####2.1 配置主服务器(master)</p>
+<p><strong>Linux下：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">vim etcmy.conf</span><br><span class="line"></span><br><span class="line">server-id = 200		# 设置主服务器的ID</span><br><span class="line">innodb_flush_log_at_trx_commit = 2</span><br><span class="line"># 操作系统崩溃或者系统断电的情况下，上一秒的所有事务数据才可能丢失</span><br><span class="line">sync_binlog = 1 	# 开启binlog⽇日志同步功能</span><br><span class="line">log-bin=mysql-bin-200 	</span><br><span class="line"># binlog⽇日志⽂文件名，这里的ID必须shi master的ID</span><br><span class="line">binlog-do-db = xxxx 	# 这个表示只同步某个库 （如果没有此项，表示同步所有的库）</span><br></pre></td></tr></table></figure>
+<p><strong>Windows下:</strong></p>
+<p>若安装的是默认路径，则在路径<br>$$<br>C:\ProgramData\MySQL\MySQL Server<br>$$<br>下寻找<br>$$<br>my.ini<br>$$<br>这是一个隐藏文件，找到之后在其中添加的内容和Linux下添加的内容一样。</p>
+<h4 id="2-2-配置完成后，重启MySQL数据库"><a href="#2-2-配置完成后，重启MySQL数据库" class="headerlink" title="2.2 配置完成后，重启MySQL数据库"></a>2.2 配置完成后，重启MySQL数据库</h4><p><strong>注意:</strong>是重启数据库这个服务，并不是重新登录数据库</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Linux：</span></span><br><span class="line">service musqld restart</span><br><span class="line"><span class="comment"># Windows</span></span><br><span class="line"><span class="comment"># 找到MySQL服务，然后重启</span></span><br></pre></td></tr></table></figure>
+<p>之后在数据库中进行操作</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mysql -u -p		## 登录数据库</span><br><span class="line">grant replication slave on *.* to &apos;mark&apos;@&apos;192.168.1.201&apos; identifined by&apos;123456&apos;;</span><br><span class="line">## 对从服务器进行授权 用户名为mark, 密码为123456， IP地址为192.168.1.201</span><br><span class="line">show master status;</span><br><span class="line">## 查看主库的状态</span><br></pre></td></tr></table></figure>
+<p>查看主数据库的状态时会出来一个表格，请记住此表格的File字段和Position的值，在从数据库配置时需要用到这两个值。在这个示例中，这两个值分别为mysql-bin-200.0000002和1167。</p>
+<h4 id="2-3-配置从数据库"><a href="#2-3-配置从数据库" class="headerlink" title="2.3 配置从数据库"></a>2.3 配置从数据库</h4><p>还是找个MySQL的配置文件，做如下改动：</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">server-id</span>=<span class="number">201</span></span><br><span class="line"><span class="comment"># 这里的id是从服务器的ID，但是不可与主服务的ID一致</span></span><br><span class="line"><span class="attr">innodb_flush_log_at_trx_commit</span>=<span class="number">2</span></span><br><span class="line"><span class="attr">sync_binlog</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">log-bin</span>=mysql-bin-<span class="number">201</span></span><br><span class="line"><span class="comment"># 为从服务器ID</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-4-重启从数据库"><a href="#2-4-重启从数据库" class="headerlink" title="2.4 重启从数据库"></a>2.4 重启从数据库</h4><p>重启方法相同</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mysql -u -p</span><br><span class="line">change master to master_host=&apos;192.168.1.200&apos;, master_user=&apos;mark&apos;, master_password=&apos;123456&apos;,master_log_file=&apos;mysqlbin-200.000002&apos; ,master_log_pos=1167;</span><br><span class="line">## IP 为主数据库IP， mark为当前数据库用户名， 密码为当前数据库密码 后面两个值是之前记录的值</span><br><span class="line">start slave;	## 开启从数据库(stop slave  关闭数据库)</span><br><span class="line">show slave status \G;</span><br><span class="line">## 当Slave_IO_Running,Slave_SQL_Running 都为Yes的时候表示配</span><br><span class="line">置成功</span><br></pre></td></tr></table></figure>
+<h4 id="2-5-验证主从"><a href="#2-5-验证主从" class="headerlink" title="2.5 验证主从"></a>2.5 验证主从</h4><p>在主数据库上创建一个库，在从数据库上刷新并查看是否存在数据库。</p>
 
       
     </div>
+    
+    
+    
 
+    
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+
+    
+
+    
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/MySQL/" rel="tag"><i class="fa fa-tag"></i> MySQL</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/20/flask/" rel="next" title="Flask基础">
+                <i class="fa fa-chevron-left"></i> Flask基础
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -440,6 +539,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -460,8 +566,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -536,6 +651,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-部署环境"><span class="nav-number">1.</span> <span class="nav-text">1 部署环境</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-配置完成后，重启MySQL数据库"><span class="nav-number">1.1.</span> <span class="nav-text">2.2 配置完成后，重启MySQL数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-配置从数据库"><span class="nav-number">1.2.</span> <span class="nav-text">2.3 配置从数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-重启从数据库"><span class="nav-number">1.3.</span> <span class="nav-text">2.4 重启从数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-5-验证主从"><span class="nav-number">1.4.</span> <span class="nav-text">2.5 验证主从</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -685,6 +816,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
